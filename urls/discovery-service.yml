@@ -1,9 +1,12 @@
-server:
-  port: 8002
+spring:
+  application:
+    name: discovery-service
 
 eureka:
   instance:
     hostname: localhost
+    nonSecurePortEnabled: true
+    nonSecurePort: 8002
   client:
     register-with-eureka: false
     fetch-registry: false

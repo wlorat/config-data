@@ -7,8 +7,11 @@ eureka:
     hostname: localhost
     nonSecurePortEnabled: true
     nonSecurePort: 8002
+    homePageUrl: http://${eureka.instance.hostname}/
+    statusPageUrl: http://${eureka.instance.hostname}/actuator/info/
+    healthCheckUrl: http://${eureka.instance.hostname}/actuator/health/
   client:
-    register-with-eureka: false
     fetch-registry: false
-    serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}/eureka/
